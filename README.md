@@ -1,20 +1,20 @@
 # RAG Red-Team Framework
 
-**Framework de red-teaming et de défense pour systèmes RAG/agentiques — injection de prompt, détection ML, évaluation quantifiée (ASR, ROC, indice de Youden).**
+**Framework de red-teaming et de défense pour systèmes RAG/agentiques : injection de prompt, détection ML, évaluation quantifiée (ASR, ROC, indice de Youden).**
 
-Projet réalisé à but défensif et pédagogique : on construit à la fois l'attaque (pour comprendre la surface de risque réelle d'un système RAG) et la défense (un détecteur entraîné), puis on mesure objectivement l'efficacité de la défense — méthodologie inspirée des frameworks professionnels comme Microsoft PyRIT ou NVIDIA Garak.
+Projet réalisé à but défensif et pédagogique : on construit à la fois l'attaque (pour comprendre la surface de risque réelle d'un système RAG) et la défense (un détecteur entraîné), puis on mesure objectivement l'efficacité de la défense, méthodologie inspirée des frameworks professionnels comme Microsoft PyRIT ou NVIDIA Garak.
 
 ---
 
-## ⚠️ Portée et éthique du projet
+##  Portée et éthique du projet
 
 Tout ce framework s'exécute **en sandbox, contre une cible que j'ai moi-même construite** (un agent factice avec un secret canari), ou optionnellement contre un LLM de test (OpenAI/Azure) sous mon propre contrôle. Rien ici ne vise ni n'accède à un système tiers réel. L'objectif est strictement défensif : comprendre les techniques d'attaque documentées (OWASP LLM Top 10) pour construire et évaluer une contre-mesure.
 
 ---
 
-## 🎯 Problème traité
+##  Problème traité
 
-Les systèmes RAG (Retrieval-Augmented Generation) et les agents IA connectés à des outils sont de plus en plus déployés en entreprise (chatbots internes, assistants documentaires). Une classe de vulnérabilité spécifique et peu intuitive les concerne : **l'injection de prompt indirecte** — un attaquant qui ne peut pas modifier le prompt système peut néanmoins influencer le comportement du LLM en cachant une instruction dans un document qui sera plus tard récupéré par le RAG et injecté dans le contexte du modèle.
+Les systèmes RAG (Retrieval-Augmented Generation) et les agents IA connectés à des outils sont de plus en plus déployés en entreprise (chatbots internes, assistants documentaires). Une classe de vulnérabilité spécifique et peu intuitive les concerne : **l'injection de prompt indirecte**, un attaquant qui ne peut pas modifier le prompt système peut néanmoins influencer le comportement du LLM en cachant une instruction dans un document qui sera plus tard récupéré par le RAG et injecté dans le contexte du modèle.
 
 Ce projet :
 1. **Génère et catégorise** des attaques réalistes (directes, indirectes, obfusquées, multi-tours), mappées au référentiel OWASP Top 10 for LLM Applications.
@@ -23,7 +23,7 @@ Ce projet :
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌──────────────────┐     ┌─────────────────┐     ┌──────────────────┐
@@ -57,7 +57,7 @@ Texte à évaluer
 
 ---
 
-## 📂 Structure du projet
+##  Structure du projet
 
 ```
 rag-redteam-framework/
@@ -104,7 +104,7 @@ rag-redteam-framework/
 
 ---
 
-## 🔬 Nouveau : classifieur "constitutionnel" (données synthétiques)
+## Nouveau : classifieur "constitutionnel" (données synthétiques)
 
 **Le problème** : le détecteur ML initial est entraîné sur seulement ~20 exemples d'attaque écrits à la main — un dataset trop petit pour bien généraliser à des formulations d'attaque jamais vues.
 
@@ -127,7 +127,7 @@ python scripts/train_constitutional.py   # entraîne les deux détecteurs + comp
 
 ---
 
-## 🚀 Installation et démarrage rapide
+##  Installation et démarrage rapide
 
 ```bash
 git clone <votre-repo>
@@ -163,7 +163,7 @@ OPENAI_API_KEY=<votre-clé>
 
 ---
 
-## 📊 Résultats mesurés
+##  Résultats mesurés
 
 ### Taux de succès d'attaque (ASR), campagne de 16 cas
 
@@ -200,7 +200,7 @@ Les 4 mutations testées sont détectées, ce qui montre que le détecteur gén�
 
 ---
 
-## 🧠 Choix de conception à retenir
+##  Choix de conception à retenir
 
 - **Une cible factice, pas un vrai LLM, comme baseline** : garantit des résultats 100% reproductibles hors-ligne, sans dépendance à une clé API payante ni à la version d'un modèle qui évolue dans le temps. La cible modélise la *compréhension sémantique* d'un LLM réel (elle décode le Base64, tolère les homoglyphes) — ce qui la rend réalistement vulnérable aux techniques d'obfuscation, contrairement à un simple filtre par mots-clés.
 - **Secret canari plutôt que jugement subjectif** : le succès d'une attaque est mesuré objectivement (le secret a-t-il fui ? l'outil sensible a-t-il été appelé ?), pas par une évaluation qualitative de "dangerosité" de la réponse — reproductible et non ambigu.
@@ -212,7 +212,7 @@ Les 4 mutations testées sont détectées, ce qui montre que le détecteur gén�
 
 ---
 
-## ⚠️ Limites assumées et pistes d'amélioration
+##  Limites assumées et pistes d'amélioration
 
 - **Jeu de données volontairement petit** (24 exemples malveillants, 16 bénins) : suffisant pour démontrer la méthodologie, mais un détecteur en production nécessiterait un corpus bien plus large et diversifié (idéalement des attaques réelles observées, pas seulement générées).
 - **Cible factice à triggers explicites** : le mock ne capture pas toute la richesse du raisonnement d'un vrai LLM. Les résultats contre un vrai modèle (`TARGET_LLM_PROVIDER=openai`) seront différents et généralement meilleurs côté robustesse native — c'est documenté et attendu, pas une limite cachée.
@@ -223,7 +223,7 @@ Les 4 mutations testées sont détectées, ce qui montre que le détecteur gén�
 
 ---
 
-## 📚 Références
+##  Références
 
 - Sharma, M. et al. **"Constitutional Classifiers: Defending Against Universal Jailbreaks Across Thousands of Hours of Red Teaming"**, 2025 (Anthropic).
 - Liu, Y. et al. **"Formalizing and Benchmarking Prompt Injection Attacks and Defenses"**, USENIX Security 2024.
@@ -231,7 +231,7 @@ Les 4 mutations testées sont détectées, ce qui montre que le détecteur gén�
 
 ---
 
-## 🛠️ Stack technique
+##  Stack technique
 
 Python 3.12 · scikit-learn (TF-IDF + régression logistique) · OpenAI SDK (compatible Azure OpenAI) · pytest
 
