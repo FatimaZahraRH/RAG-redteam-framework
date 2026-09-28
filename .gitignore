@@ -1,0 +1,20 @@
+# Environnement
+.env
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Modèle entraîné et rapports générés (reproductibles via les scripts)
+data/detector_model.joblib
+data/constitutional_detector.joblib
+redteam_campaign_report.md
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store

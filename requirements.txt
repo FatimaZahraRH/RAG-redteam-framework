@@ -1,0 +1,11 @@
+# --- Cœur du projet ---
+scikit-learn>=1.4.0
+joblib>=1.4.0
+python-dotenv>=1.0.0
+numpy>=1.26.0
+
+# --- Fournisseurs LLM réels optionnels (cible testée) ---
+openai>=1.30.0          # requis pour TARGET_LLM_PROVIDER=openai ou azure_openai
+
+# --- Tests ---
+pytest>=8.0.0

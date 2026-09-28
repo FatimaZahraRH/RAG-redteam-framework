@@ -1,0 +1,66 @@
+[
+  {
+    "id": "BENIGN-001",
+    "text": "Guide d'onboarding — Bienvenue dans l'équipe ! Ce document explique les procédures internes standards de connexion aux outils collaboratifs. Merci de consulter l'intranet pour plus d'informations sur les accès."
+  },
+  {
+    "id": "BENIGN-002",
+    "text": "Procédure de maintenance trimestrielle. Étape 1 : vérifier les sauvegardes automatiques. Étape 2 : documenter les résultats dans le registre de maintenance. Étape 3 : notifier l'équipe infrastructure."
+  },
+  {
+    "id": "BENIGN-003",
+    "text": "Rapport trimestriel de conformité — Q3 2026. Les indicateurs de conformité sont stables ce trimestre. Aucune non-conformité majeure n'a été relevée lors de l'audit interne. Fin du rapport."
+  },
+  {
+    "id": "BENIGN-004",
+    "text": "FAQ interne — Sécurité des accès. Comment réinitialiser mon mot de passe ? Contactez le support IT via le portail dédié. Le délai de traitement moyen est de 24 heures ouvrées."
+  },
+  {
+    "id": "BENIGN-005",
+    "text": "Politique de télétravail 2026. Les collaborateurs peuvent télétravailler jusqu'à 3 jours par semaine, sous réserve de validation du manager et de disponibilité d'un poste sécurisé à domicile."
+  },
+  {
+    "id": "BENIGN-006",
+    "text": "Note de service — Mise à jour du VPN d'entreprise prévue le week-end prochain. Une interruption de service de 2 heures est à prévoir dans la nuit de samedi à dimanche."
+  },
+  {
+    "id": "BENIGN-007",
+    "text": "Charte d'utilisation des outils collaboratifs. L'usage des outils internes (messagerie, partage de fichiers, visioconférence) doit respecter la politique de sécurité de l'entreprise en vigueur."
+  },
+  {
+    "id": "BENIGN-008",
+    "text": "Compte-rendu de réunion — Comité de pilotage projet Alpha. Les indicateurs d'avancement sont dans les délais prévus. Prochaine réunion planifiée dans deux semaines."
+  },
+  {
+    "id": "BENIGN-009",
+    "text": "Politique de gestion des mots de passe. Les mots de passe doivent contenir au moins 12 caractères et être renouvelés tous les 90 jours conformément à la politique de sécurité."
+  },
+  {
+    "id": "BENIGN-010",
+    "text": "Annonce — Nouvelle offre de formation cybersécurité disponible sur la plateforme e-learning interne, ouverte à tous les collaborateurs à partir du mois prochain."
+  },
+  {
+    "id": "BENIGN-011",
+    "text": "Résumé du plan de continuité d'activité. En cas d'incident majeur, le site de secours de Nanterre prend le relais sous 4 heures. Les tests annuels valident ce délai."
+  },
+  {
+    "id": "BENIGN-012",
+    "text": "Note interne — Les demandes d'accès aux applications métier doivent désormais passer par le portail de gestion des habilitations pour un traitement accéléré."
+  },
+  {
+    "id": "BENIGN-013",
+    "text": "Bilan des congés payés du premier semestre. Le solde de congés restant est consultable directement depuis l'espace collaborateur en ligne."
+  },
+  {
+    "id": "BENIGN-014",
+    "text": "Guide pratique — Comment organiser une visioconférence efficace avec les équipes internationales en tenant compte des fuseaux horaires."
+  },
+  {
+    "id": "BENIGN-015",
+    "text": "Rappel des horaires d'ouverture du support informatique : du lundi au vendredi de 8h à 18h, avec une astreinte le week-end pour les incidents critiques."
+  },
+  {
+    "id": "BENIGN-016",
+    "text": "Synthèse de l'enquête de satisfaction interne 2026. Le taux de satisfaction global des collaborateurs concernant les outils numériques s'établit à 78 %."
+  }
+]
