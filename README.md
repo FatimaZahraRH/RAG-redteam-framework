@@ -136,8 +136,8 @@ python scripts/train_constitutional.py   # entraîne les deux détecteurs + comp
 ##  Installation et démarrage rapide
 
 ```bash
-git clone https://github.com/FatimaZahraRH/RAG-redteam-framework-.git
-cd RAG-redteam-framework-
+git clone https://github.com/FatimaZahraRH/RAG-redteam-framework.git
+cd RAG-redteam-framework
 
 python3 -m venv venv
 source venv/bin/activate
