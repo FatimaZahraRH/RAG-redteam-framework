@@ -1,6 +1,12 @@
 # RAG Red-Team Framework
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white) ![Tests](https://img.shields.io/badge/tests-31%20passed-brightgreen) ![Licence](https://img.shields.io/badge/licence-MIT-blue)
+
 **Framework de red-teaming et de défense pour systèmes RAG/agentiques : injection de prompt, détection ML, évaluation quantifiée (ASR, ROC, indice de Youden).**
+
+> **En bref** — un framework qui attaque puis défend un système RAG. Il lance quatre familles d'injection de prompt (directe, indirecte via documents empoisonnés, obfusquée, multi-tours) contre une cible sandboxée, puis mesure l'effet d'un détecteur hybride règles + ML placé en amont du LLM.
+>
+> **Taux de succès des attaques réduit de 93,8 % à 6,2 % · AUC 0,867 · 31 tests.** Le cas qui passe encore la défense est documenté, pas caché.
 
 Projet réalisé à but défensif et pédagogique : on construit à la fois l'attaque (pour comprendre la surface de risque réelle d'un système RAG) et la défense (un détecteur entraîné), puis on mesure objectivement l'efficacité de la défense, méthodologie inspirée des frameworks professionnels comme Microsoft PyRIT ou NVIDIA Garak.
 
@@ -104,7 +110,7 @@ rag-redteam-framework/
 
 ---
 
-## Nouveau : classifieur "constitutionnel" (données synthétiques)
+## Classifieur « constitutionnel » (données synthétiques)
 
 **Le problème** : le détecteur ML initial est entraîné sur seulement ~20 exemples d'attaque écrits à la main — un dataset trop petit pour bien généraliser à des formulations d'attaque jamais vues.
 
@@ -130,7 +136,7 @@ python scripts/train_constitutional.py   # entraîne les deux détecteurs + comp
 ##  Installation et démarrage rapide
 
 ```bash
-git clone <votre-repo>
+git clone https://github.com/FatimaZahraRH/rag-redteam-framework.git
 cd rag-redteam-framework
 
 python3 -m venv venv
@@ -239,4 +245,4 @@ Python 3.12 · scikit-learn (TF-IDF + régression logistique) · OpenAI SDK (com
 
 ## Licence
 
-Projet personnel à but pédagogique et défensif. Toutes les attaques sont exécutées contre une cible sandboxée construite pour ce projet, jamais contre un système tiers réel.
+Distribué sous licence MIT (voir [`LICENSE`](LICENSE)). Projet personnel à but pédagogique et défensif. Toutes les attaques sont exécutées contre une cible sandboxée construite pour ce projet, jamais contre un système tiers réel.
